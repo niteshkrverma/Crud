@@ -81,6 +81,7 @@
                 <th>Category</th>
                 <th>Price</th>
                 <th>Image</th>
+                <th>Desc</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -98,6 +99,7 @@
                     <span th:if="${pro.imageFileName == null}">No Image</span>
                 </td>
                 <!-- Actions: Edit and Delete -->
+                <td th:text="${pro.description}"></td>
                 <td style="white-space: nowrap;">
                     <a class="btn btn-warning btn-sm" th:href="@{products/edit/{id}(id=${pro.id})}">Edit</a>
                     <a class="btn btn-danger btn-sm" th:href="@{products/delete/{id}(id=${pro.id})}" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
