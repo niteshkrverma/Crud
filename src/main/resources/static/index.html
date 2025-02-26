@@ -57,4 +57,28 @@
     }
 
     fetchData();
+    // Function to delete a user
+function deleteUser(userId) {
+    // Confirm deletion
+    if (confirm("Are you sure you want to delete this user?")) {
+        // Send a DELETE request to the backend API
+        fetch(`/api/customers/${userId}`, {
+            method: 'DELETE',
+        })
+        .then(response => {
+            if (response.ok) {
+                // If successful, remove the user from the DOM or reload the page to reflect the changes
+                alert('User deleted successfully!');
+                location.reload();  // Assuming you are using an id like 'user-123'
+            } else {
+                alert('Failed to delete the user. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error deleting user:', error);
+            alert('An error occurred while deleting the user.');
+        });
+    }
+}
+
 </script>
