@@ -35,7 +35,7 @@
             tableBody.innerHTML = "";
 
             data.forEach(user => {
-                const imageUrl = user.image ? `http://localhost:8080/api/customers/image/${user.image}` : "default.png";
+                const imageUrl = user.image ? `http://localhost:8080/uploads/${user.image}` : "default.png";
                 const row = document.createElement("tr");
                 row.innerHTML = `
                     <td>${user.id}</td>
